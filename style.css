@@ -7,6 +7,11 @@
 
     /* Général */
 
+    html {
+      scroll-behavior: smooth;
+
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -260,8 +265,8 @@
     }
 
     #zenamu-calendar>div>div>a {
-      display: none; 
-    } 
+      display: none;
+    }
 
 
     @media (max-width: 900px) {
