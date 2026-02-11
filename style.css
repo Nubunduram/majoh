@@ -1,10 +1,7 @@
     :root {
       --bg: #faf9f7;
       --primary: #3f5d4a;
-      --secondary: #8fa99b;
-      --accent: #d9bfa9;
       --text: #1f2933;
-      --muted: #6b7280;
       --white: #ffffff;
     }
 
@@ -20,6 +17,8 @@
       display: grid;
       padding: 2rem 1rem;
       gap: 4rem;
+      max-width: 1100px;
+      margin: auto;
     }
 
     body {
@@ -34,10 +33,6 @@
       display: block;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-    }
 
     /* Buttons */
 
@@ -88,13 +83,11 @@
 
     /* Header */
 
-    body>header {
-      background: var(--white);
-      border-bottom: 1px solid var(--primary);
-      padding: 0.5rem 2rem;
-    }
-
     .nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 1rem;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -110,8 +103,7 @@
     }
 
     .logo img {
-      width: 80px;
-      height: 80px;
+      width: 35px;
     }
 
     .hero {
@@ -119,7 +111,6 @@
       grid-template-columns: 1.5fr 0.5fr;
       gap: 3rem;
       align-items: center;
-      padding: 0 2rem;
     }
 
     .hero div {
@@ -138,18 +129,14 @@
       color: var(--primary);
     }
 
-    .hero h1 span {
-      word-break: break-all;
-    }
-
     .hero p {
       font-size: 1.15rem;
-      color: var(--muted);
+      color: var(--primary);
     }
 
     .hero img {
       border-radius: 16px;
-      margin: auto;
+      margin-left: auto;
     }
 
     .features {
@@ -176,7 +163,7 @@
     }
 
     .feature p {
-      color: var(--muted);
+      color: var(--text);
       font-size: 1rem;
     }
 
@@ -187,8 +174,6 @@
       border-radius: 24px;
       padding: 2rem;
       text-align: center;
-      max-width: 900px;
-      margin: auto;
     }
 
     .cta h2 {
@@ -203,7 +188,6 @@
     }
 
     footer {
-      background: var(--white);
       color: var(--text);
       text-align: center;
       padding: 2rem;
@@ -219,7 +203,7 @@
     footer .copyright {
       margin-top: 1rem;
       font-size: 0.85rem;
-      color: var(--muted);
+      color: var(--text);
     }
 
     .section-courses {
@@ -259,7 +243,7 @@
     }
 
     .course>p {
-      color: var(--muted);
+      color: var(--text);
       font-size: 1rem;
     }
 
@@ -273,8 +257,18 @@
         align-items: center;
       }
 
+      .hero img {
+        margin: auto;
+      }
+
       .features,
       .courses {
         grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .hero h1 span {
+        word-break: break-all;
       }
     }
