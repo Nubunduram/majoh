@@ -4,12 +4,28 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Majoh — Yoga doux & accessible</title>
+    <title>Cours de yoga doux & yoga sur chaise — En ligne et en présentiel | Majoh</title>
     <meta name="description"
-        content="Majoh propose des cours de yoga doux, accessibles à tous, dans une ambiance chaleureuse et bienveillante." />
+        content="Cours de yoga doux et yoga sur chaise en ligne, en présentiel et à domicile. Séances en petit groupe ou en cours particulier. Accessible à tous les âges. Réservez votre séance avec Majoh." />
+    <meta name="robots" content="index, follow">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://majoh-yoga.fr/" />
     <link rel="stylesheet" href="style.css">
     <!-- <link rel="icon" href="./logo_yoga.png"> -->
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "jobTitle": "Professeure de yoga",
+    "name": "Majoh",
+    "description": "Cours de yoga doux et yoga sur chaise en ligne et en présentiel.",
+    "telephone": "+33615271022",
+    "email": "majoh.yoga@gmail.com"
+    "@type": "Person",
+    "areaServed": "Gagny et alentours",
+    }
+    </script>
 
 </head>
 
@@ -18,7 +34,7 @@
     <header>
         <div class="nav">
             <div class="logo">
-                <img src="./logo_yoga.png" alt="Logo Majoh" />
+                <img src="./assets/logo_yoga.png" alt="Logo Majoh" />
                 Majoh
             </div>
             <a target="_blank" href="https://app.zenamu.com/majoh" class="btn">Réserver</a>
@@ -28,31 +44,35 @@
     <main>
         <section class="hero">
             <div>
-                <h1>Un yoga doux, accessible et <span>profondément</span> humain</h1>
+                <h1>Cours de yoga doux & yoga sur chaise, en ligne et en présentiel</h1>
                 <p>
-                    J'accompagne les personnes en quête de douceur à se reconnecter avec leur corps, apaiser leur mental
+                    Professeure de yoga spécialisée en yoga doux et yoga sur chaise, j'accompagne les personnes en quête
+                    de douceur à se reconnecter avec leur corps, apaiser leur mental
                     et relâcher les tensions quel que soit votre âge ou votre expérience.
                 </p>
                 <a href="#section-courses" class="btn secondary">Découvrir les cours</a>
             </div>
-            <img src="./img_yoga.png" alt="Cours de yoga doux" />
+            <img src="./assets/img_yoga.png" alt="Professeure de yoga accompagnement personnalisé" />
         </section>
 
         <section id="section-courses" class="section-courses">
             <h2>Quel cours est fait pour vous ?</h2>
             <p class="courses-p">
-                Tous les cours peuvent se faire en ligne ou en présentiel,
-                en petit groupe ou en cours particulier. Trouvez celui qui correspond à vos besoins.
+                Majoh propose des cours de yoga doux, hatha yoga et yoga sur chaise,
+                accessibles aux débutants, seniors et personnes en recherche de mobilité.
+                Les cours sont disponibles en ligne, en présentiel dans différents studios
+                et à domicile selon votre localisation. En petit groupe ou en cours particulier. Trouvez celui qui
+                correspond à vos besoins.
             </p>
             <div class="courses">
                 <div class="course">
-                    <img src="./hatha_yoga_doux.png" alt="Cours de Yoga Hatha" />
+                    <img src="./assets/hatha_yoga_doux.png" alt="Cours de yoga hatha doux en petit groupe" />
                     <h3>Cours de Yoga Hatha - Doux</h3>
                     <p>Des mouvements doux pour tous les niveaux, favorisant mobilité, détente et sérénité. Idéal pour
                         relâcher le stress et améliorer la posture.</p>
                 </div>
                 <div class="course">
-                    <img src="./yoga_chaise.png" alt="Cours de Yoga sur chaise" />
+                    <img src="./assets/yoga_chaise.png" alt="Cours de yoga sur chaise pour seniors" />
                     <h3>Cours de Yoga sur chaise</h3>
                     <p>Pratique accessible depuis une chaise, idéale pour la mobilité réduite ou débutants. Respiration,
                         étirements et relaxation adaptés à chacun.</p>
@@ -64,17 +84,17 @@
             <h2>Pourquoi choisir Majoh ?</h2>
             <div class="features">
                 <div class="feature">
-                    <img src="./lotus.png" alt="Accessible" />
+                    <img src="./assets/lotus.png" alt="Accessible" />
                     <h3>Accessible à tous</h3>
                     <p>Des cours pensés pour tous les niveaux, sans pression ni performance.</p>
                 </div>
                 <div class="feature">
-                    <img src="./tapis.png" alt="Doux" />
+                    <img src="./assets/tapis.png" alt="Doux" />
                     <h3>Yoga en douceur</h3>
                     <p>Mobilité, respiration et détente avant tout, dans le respect du corps et de l'esprit.</p>
                 </div>
                 <div class="feature">
-                    <img src="./yoga.png" alt="Humain" />
+                    <img src="./assets/yoga.png" alt="Humain" />
                     <h3>Accompagnement humain</h3>
                     <p>Un cadre bienveillant, à taille humaine, loin des studios impersonnels.</p>
                 </div>
@@ -84,8 +104,7 @@
         <section class="cta" id="contact">
             <h2>Envie de prendre soin de vous ?</h2>
             <p>
-                Réservez votre premier cours et venez découvrir une pratique respectueuse,
-                apaisante et accessible.
+                Réservez votre premier cours et découvrez une pratique respectueuse, apaisante et accessible, qui vous aidera à améliorer votre posture, mieux gérer le stress, prendre conscience de votre respiration et cultiver un véritable bien-être physique et mental.
             </p>
             <a href="#zenamu-calendar" class="btn third">Voir les disponibilités</a>
         </section>
@@ -98,7 +117,7 @@
         <div class="footer-content">
             <p>
                 Mail :
-                <a href="mailto:contact@majoh-yoga.fr">majoh.yoga@gmail.com</a>
+                <a href="mailto:majoh.yoga@gmail.com">majoh.yoga@gmail.com</a>
                 - Téléphone :
                 <a href="tel:+33612345678">06 15 27 10 22</a>
             </p>
