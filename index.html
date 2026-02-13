@@ -8,6 +8,8 @@
     <meta name="description"
         content="Cours de yoga doux et yoga sur chaise en ligne, en présentiel et à domicile. Séances en petit groupe ou en cours particulier. Accessible à tous les âges. Réservez votre séance avec Majoh." />
     <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="canonical" href="https://majoh-yoga.fr/" />
     <link rel="stylesheet" href="style.css">
@@ -111,11 +113,10 @@
                 aidera à améliorer votre posture, mieux gérer le stress, prendre conscience de votre respiration et
                 cultiver un véritable bien-être physique et mental.
             </p>
-            <a href="#zenamu-calendar" class="btn third">Voir les disponibilités</a>
+            <a href="#zenamu-calendar" id="load-calendar" class="btn third">Voir les disponibilités</a>
         </section>
 
         <section id="zenamu-calendar" calendar-id="58e911e238f4847788ac439d9e13fbc2"></section>
-
     </main>
 
     <footer>
@@ -139,8 +140,7 @@
             </p>
         </div>
     </footer>
-
-    <script src="https://zenamu.com/calendar/list.js" async defer crossorigin></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
