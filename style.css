@@ -261,7 +261,6 @@ footer a:hover {
 }
 
 footer .copyright {
-  margin-top: 1rem;
   font-size: 0.85rem;
   color: var(--text);
 }
@@ -303,6 +302,10 @@ footer .copyright {
   display: none;
 }
 
+.footer-legal {
+  font-size: 14px;
+  margin-top: 1rem;
+}
 
 @media (max-width: 900px) {
   .hero {
@@ -328,4 +331,33 @@ footer .copyright {
   .hero h1 span {
     word-break: break-all;
   }
+}
+
+
+
+/* Page légal */
+
+.legal {
+  max-width: 800px;
+  margin: auto;
+  font-size: 0.95rem;
+}
+
+.legal h1 {
+  margin-bottom: 2rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+.legal h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.btn.home {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: fit-content;
 }
