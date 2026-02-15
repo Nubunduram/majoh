@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://majoh-yoga.fr/sitemap.xml
+Sitemap: https://majohyoga.fr/sitemap.xml
