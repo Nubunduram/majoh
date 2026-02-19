@@ -15,15 +15,15 @@
     <link rel="preload" href="./assets/fonts/inter-v20-latin-500.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./assets/fonts/inter-v20-latin-600.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./assets/fonts/inter-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
-    <!-- <link rel="icon" href="./logo_yoga.png"> -->
+    <link rel="icon" href="./assets/images/yoga.ico">
 
-<script type="application/ld+json">
+    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Majoh",
   "url": "https://majohyoga.fr/",
-  "image": "https://majohyoga.fr/assets/images/professeure_yoga.avif",
+  "image": "https://majohyoga.fr/assets/images/professeure_yoga.png",
   "jobTitle": "Professeure de yoga",
   "description": "Professeure de yoga proposant des cours de yoga doux, yoga sur chaise et accompagnement bien-être en ligne et en présentiel en Seine-Saint-Denis.",
   "telephone": "+33615271022",
@@ -102,8 +102,7 @@
     <header>
         <div class="nav">
             <div class="logo">
-                <img src="./assets/images/logo_yoga@2x.png" alt="Logo Majoh" width="35" height="80"
-                    srcset="./assets/images/logo_yoga@2x.png 2x, ./assets/images/logo_yoga.png 1x">
+                <img src="./assets/images/majoh_logo.png" alt="Logo Majoh" width="35" height="80">
                 Majoh
             </div>
             <a target="_blank" href="https://app.zenamu.com/majoh" class="btn">Réserver</a>
@@ -121,9 +120,13 @@
                 </p>
                 <a href="#section-courses" class="btn secondary">Découvrir les cours</a>
             </div>
-            <img src="./assets/images/professeure_yoga_2x.avif" alt="Professeure de yoga accompagnement personnalisé"
-                width="219" height="320"
-                srcset="./assets/images/professeure_yoga_2x.avif 2x, ./assets/images/professeure_yoga.avif 1x" loading="eager">
+            <picture>
+                <source srcset="./assets/images/professeure_yoga_2x.avif 2x, ./assets/images/professeure_yoga.avif 1x"
+                    type="image/avif">
+
+                <img src="./assets/images/professeure_yoga.png" alt="Professeure de yoga accompagnement personnalisé"
+                    width="219" height="320" loading="eager">
+            </picture>
         </section>
 
         <section id="section-courses" class="section-courses">
@@ -137,15 +140,21 @@
             </p>
             <div class="courses">
                 <div class="course">
-                    <img loading="lazy" src="./assets/images/hatha_yoga_doux.avif"
-                        alt="Cours de yoga hatha doux en petit groupe" width="200" height="200" />
+                    <picture>
+                        <source srcset="./assets/images/hatha_yoga_doux.avif" type="image/avif">
+                        <img loading="lazy" src="./assets/images/hatha_yoga_doux.png"
+                            alt="Cours de yoga hatha doux en petit groupe" width="200" height="200">
+                    </picture>
                     <h3>Cours de Yoga Hatha - Doux</h3>
                     <p>Des mouvements doux pour tous les niveaux, favorisant mobilité, détente et sérénité. Idéal pour
                         relâcher le stress et améliorer la posture.</p>
                 </div>
                 <div class="course">
-                    <img loading="lazy" src="./assets/images/yoga_chaise.avif" alt="Cours de yoga sur chaise pour seniors"
-                        width="200" height="200" />
+                    <picture>
+                        <source srcset="./assets/images/yoga_chaise.avif" type="image/avif">
+                        <img loading="lazy" src="./assets/images/yoga_chaise.avif"
+                            alt="Cours de yoga sur chaise pour seniors" width="200" height="200" />
+                    </picture>
                     <h3>Cours de Yoga sur chaise</h3>
                     <p>Pratique accessible depuis une chaise, idéale pour la mobilité réduite ou débutants. Respiration,
                         étirements et relaxation adaptés à chacun.</p>
@@ -194,7 +203,7 @@
                 <a href="mailto:majoh.yoga@gmail.com">majoh.yoga@gmail.com</a> |
 
                 Téléphone :
-                <a href="tel:+33612345678">06 15 27 10 22</a> |
+                <a href="tel:+33615271022">06 15 27 10 22</a> |
 
                 Instagram :
                 <a target="_blank" href="https://instagram.com/majoh_yoga" target="_blank" rel="noopener">
@@ -208,7 +217,8 @@
 
             </p>
             <p class="copyright">
-            © <script>document.write(new Date().getFullYear());</script> Majoh Yoga – Tous droits réservés
+                ©
+                <script>document.write(new Date().getFullYear());</script> Majoh Yoga – Tous droits réservés
             </p>
         </div>
     </footer>
