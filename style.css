@@ -281,7 +281,7 @@ footer .copyright {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-.course>img {
+.course>picture>img {
   width: 200px;
   margin: auto;
   margin-bottom: 1.2rem;
