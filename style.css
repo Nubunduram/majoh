@@ -298,6 +298,21 @@ footer .copyright {
   font-size: 1rem;
 }
 
+.redirection-courses-type {
+  width: 100%;
+}
+
+.redirection-courses-type a {
+  color: var(--bg);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.redirection-courses-type a:hover {
+  text-decoration: none;
+}
+
+
 #zenamu-calendar>div>div>a {
   display: none;
 }
@@ -360,4 +375,53 @@ footer .copyright {
   top: 1rem;
   left: 1rem;
   width: fit-content;
+}
+
+/* Yoga Le Raincy */
+
+.faq {
+  display: grid;
+  gap: 24px;
+}
+
+.faq-item {
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 16px;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  align-items: center;
+  gap: 8px;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  transition: transform 0.4s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.4s ease;
+  padding: 0 16px;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+  padding: 16px;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(135deg);
 }

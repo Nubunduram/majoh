@@ -20,18 +20,19 @@
     <loc>https://majohyoga.fr/yoga-a-domicile</loc>
     <priority>0.8</priority>
   </url>
+  -->
 
   <url>
     <loc>https://majohyoga.fr/yoga-en-ligne</loc>
     <priority>0.8</priority>
-  </url> -->
+  </url> 
 
   <!-- Pages par ville / studio -->
 
-  <!-- <url>
+  <url>
     <loc>https://majohyoga.fr/yoga-le-raincy</loc>
     <priority>0.8</priority>
-  </url> -->
+  </url>
 
 
     <!-- Legals -->
