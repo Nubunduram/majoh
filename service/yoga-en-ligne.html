@@ -4,50 +4,113 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yoga en ligne – Cours doux & sur chaise | Majoh</title>
+    <title>Yoga en ligne – Cours de yoga doux & sur chaise | Majoh</title>
     <meta name="description"
         content="Cours de yoga doux et yoga sur chaise en ligne avec Majoh. Séances accessibles à tous, en petit groupe ou cours particuliers, depuis chez vous." />
     <meta name="robots" content="index, follow">
-    <link rel="stylesheet" href="style.css">
-    <link rel="canonical" href="https://majohyoga.fr/yoga-en-ligne" />
+    <link rel="stylesheet" href="../style.css">
+    <link rel="canonical" href="https://majohyoga.fr/service/yoga-en-ligne" />
 
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cours de Yoga en ligne – Majoh">
+    <meta property="og:description"
+        content="Yoga doux, yoga sur chaise, cours particuliers, en ligne et en présentiel !">
+    <meta property="og:url" content="https://majohyoga.fr/service/yoga-en-ligne">
+    <meta property="og:image" content="https://majohyoga.fr/assets/images/majoh_logo_rs.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cours de Yoga en ligne – Majoh">
+    <meta name="twitter:description"
+        content="Yoga doux, yoga sur chaise, cours particuliers, en ligne et en présentiel !">
+    <meta name="twitter:image" content="https://majohyoga.fr/assets/images/majoh_logo_rs.png">
+
+    <!-- Preload des fonts -->
+    <link rel="preload" href="../assets/fonts/inter-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/inter-v20-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/inter-v20-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/inter-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon_32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon_16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon_applewatch.png">
+
+    <!-- Local Business (Uniforme) + (Mettre sur toutes les pages) -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://majohyoga.fr/#localbusiness",
+  "name": "Majoh yoga",
+  "image": "https://majohyoga.fr/assets/images/professeure_yoga.png",
+  "url": "https://majohyoga.fr",
+  "telephone": "+33615271022",
+  "email": "majoh.yoga@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gagny",
+    "postalCode": "93220",
+    "addressCountry": "FR"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Gagny"
+    },
+    {
+      "@type": "City",
+      "name": "Le Raincy"
+    },
+    {
+      "@type": "City",
+      "name": "Villemomble"
+    },
+    {
+      "@type": "City",
+      "name": "Montfermeil"
+    }
+  ],
+  "priceRange": "€€",
+  "sameAs": [
+    "https://instagram.com/majoh_yoga"
+  ]
+}
+</script>
+
+    <!-- Person (Uniforme) + (Mettre sur toutes les pages) -->
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Majoh",
-  "url": "https://majohyoga.fr/",
-  "image": "https://majohyoga.fr/assets/images/professeure_yoga.png",
+  "@id": "https://majohyoga.fr/#person",
+  "name": "Johanne Majoh",
   "jobTitle": "Professeure de yoga",
-  "description": "Professeure de yoga proposant des cours de yoga doux et yoga sur chaise en ligne et en présentiel.",
+  "image": "https://majohyoga.fr/assets/images/professeure_yoga.png",
+  "url": "https://majohyoga.fr",
   "telephone": "+33615271022",
   "email": "majoh.yoga@gmail.com",
-  "knowsAbout": ["Yoga doux", "Yoga sur chaise", "Bien-être", "Relaxation", "Mobilité douce"],
-  "offers": {
-    "@type": "OfferCatalog",
-    "name": "Cours de yoga en ligne",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Cours de yoga doux en ligne",
-          "description": "Séances douces pour tous niveaux, depuis chez vous."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Yoga sur chaise en ligne",
-          "description": "Pratique accessible à tous, pour détente, mobilité et respiration."
-        }
-      }
-    ]
+  "sameAs": [
+    "https://instagram.com/majoh_yoga"
+  ],
+  "knowsAbout": [
+    "Hatha Yoga",
+    "Yoga doux",
+    "Yoga sur chaise",
+    "Bien-être",
+    "Mobilité douce",
+    "Relaxation"
+  ],
+  "worksFor": {
+    "@type": "LocalBusiness",
+    "@id": "https://majohyoga.fr/#localbusiness"
   }
 }
 </script>
 
+    <!-- FAQ -->
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -93,8 +156,8 @@
 <body>
     <header>
         <div class="nav">
-            <a class="logo" href="./index.html">
-                <img src="./assets/images/majoh_logo.png" alt="Logo Majoh" width="35" height="80">
+            <a class="logo" href="../index.html">
+                <img src="../assets/images/majoh_logo.png" alt="Logo Majoh" width="35" height="80">
                 Majoh
             </a>
             <a target="_blank" href="https://app.zenamu.com/majoh" class="btn">Réserver</a>
@@ -114,7 +177,7 @@
                 <a href="#section-courses" class="btn secondary">Découvrir les cours en ligne</a>
             </div>
             <picture>
-                <img src="./assets/images/professeure_yoga.png" alt="Cours de yoga en ligne avec Majoh" width="219"
+                <img src="../assets/images/professeure_yoga.png" alt="Cours de yoga en ligne avec Majoh" width="219"
                     height="320" loading="eager">
             </picture>
         </section>
@@ -125,7 +188,7 @@
             <div class="courses">
                 <div class="course">
                     <picture>
-                        <img loading="lazy" src="./assets/images/hatha_yoga_doux.png"
+                        <img loading="lazy" src="../assets/images/hatha_yoga_doux.png"
                             alt="Cours de yoga Hatha doux en ligne" width="200" height="200">
                     </picture>
                     <h3>Yoga Hatha doux en ligne</h3>
@@ -135,7 +198,7 @@
 
                 <div class="course">
                     <picture>
-                        <img loading="lazy" src="./assets/images/yoga_chaise.png"
+                        <img loading="lazy" src="../assets/images/yoga_chaise.png"
                             alt="Cours de yoga sur chaise en ligne" width="200" height="200" />
                     </picture>
                     <h3>Yoga sur chaise en ligne</h3>
@@ -147,7 +210,11 @@
             <div class="redirection-courses-type">
                 <p>
                     Pour nos cours en présentiel, retrouvez toutes les informations sur
-                    <a href="./yoga-le-raincy.html">notre page Yoga Le Raincy</a>.
+                    <a href="../location/yoga-le-raincy.html">notre page Yoga Le Raincy</a>.
+                </p>
+                <p>
+                    Pour nos cours à Gagny, retrouvez toutes les informations sur
+                    <a href="../location/yoga-gagny.html">notre page Yoga à Gagny</a>.
                 </p>
             </div>
         </section>
@@ -246,8 +313,8 @@
             </p>
 
             <p class="footer-legal">
-                <a href="./mentions-legales.html">Mentions légales</a> |
-                <a href="./politique-confidentialite.html">Politique de confidentialité</a>
+                <a href="../policies/mentions-legales.html">Mentions légales</a> |
+                <a href="../policies/politique-confidentialite.html">Politique de confidentialité</a>
             </p>
             <p class="copyright">
                 ©
@@ -256,7 +323,7 @@
         </div>
     </footer>
 
-    <script defer async src="./script.js"></script>
+    <script defer async src="../script.js"></script>
 </body>
 
 </html>

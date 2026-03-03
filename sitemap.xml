@@ -7,42 +7,47 @@
   </url>
 
   <!-- <url>
-    <loc>https://majohyoga.fr/cours-hatha-yoga</loc>
+    <loc>https://majohyoga.fr/service/cours-hatha-yoga</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://majohyoga.fr/yoga-sur-chaise</loc>
+    <loc>https://majohyoga.fr/service/yoga-sur-chaise</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://majohyoga.fr/yoga-a-domicile</loc>
+    <loc>https://majohyoga.fr/service/yoga-a-domicile</loc>
     <priority>0.8</priority>
   </url>
   -->
 
   <url>
-    <loc>https://majohyoga.fr/yoga-en-ligne</loc>
+    <loc>https://majohyoga.fr/service/yoga-en-ligne</loc>
     <priority>0.8</priority>
   </url> 
 
   <!-- Pages par ville / studio -->
 
   <url>
-    <loc>https://majohyoga.fr/yoga-le-raincy</loc>
+    <loc>https://majohyoga.fr/location/yoga-le-raincy</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://majohyoga.fr/location/yoga-gagny</loc>
     <priority>0.8</priority>
   </url>
 
 
     <!-- Legals -->
   <url>
-    <loc>https://majohyoga.fr/mentions-legales</loc>
+    <loc>https://majohyoga.fr/policies/mentions-legales</loc>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://majohyoga.fr/politique-confidentialite</loc>
+    <loc>https://majohyoga.fr/policies/politique-confidentialite</loc>
     <priority>0.3</priority>
   </url>
   </urlset>

@@ -11,111 +11,190 @@
         content="Cours de yoga au Raincy au Centre Kiné Sport. Hatha yoga doux et yoga sur chaise chaque samedi matin en petit groupe. Proche gare RER Le Raincy – Villemomble – Montfermeil. Réservation obligatoire." />
 
     <meta name="robots" content="index, follow">
-    <link rel="stylesheet" href="style.css">
-    <link rel="canonical" href="https://majohyoga.fr/yoga-le-raincy" />
+    <link rel="stylesheet" href="../style.css">
+    <link rel="canonical" href="https://majohyoga.fr/location/yoga-le-raincy" />
 
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cours de Yoga Le Raincy – Majoh">
+    <meta property="og:description"
+        content="Cours de yoga Hatha sur tapis et sur chaise au centre kiné sport Le Raincy tout les samedis matins !">
+    <meta property="og:url" content="https://majohyoga.fr/location/yoga-le-raincy">
+    <meta property="og:image" content="https://majohyoga.fr/assets/images/majoh_logo_rs.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
-    <!-- Schema Local SEO -->
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cours de Yoga Le Raincy – Majoh">
+    <meta name="twitter:description"
+        content="Cours de yoga Hatha sur tapis et sur chaise au centre kiné sport Le Raincy tout les samedis matins !">
+    <meta name="twitter:image" content="https://majohyoga.fr/assets/images/majoh_logo_rs.png">
+
+    <!-- Preload des fonts -->
+    <link rel="preload" href="../assets/fonts/inter-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/inter-v20-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/inter-v20-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/inter-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon_32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon_16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon_applewatch.png">
+
+    <!-- Local Business (Uniforme) + (Mettre sur toutes les pages) -->
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@graph": [
+  "@type": "LocalBusiness",
+  "@id": "https://majohyoga.fr/#localbusiness",
+  "name": "Majoh yoga",
+  "image": "https://majohyoga.fr/assets/images/professeure_yoga.png",
+  "url": "https://majohyoga.fr",
+  "telephone": "+33615271022",
+  "email": "majoh.yoga@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gagny",
+    "postalCode": "93220",
+    "addressCountry": "FR"
+  },
+  "areaServed": [
     {
-      "@type": "SportsActivityLocation",
-      "name": "Cours de Yoga Le Raincy - Majoh",
-      "description": "Cours de Hatha yoga doux et yoga sur chaise au Centre Kiné Sport Le Raincy chaque samedi matin en petit groupe.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "7 Av. de la Résistance",
-        "postalCode": "93340",
-        "addressLocality": "Le Raincy",
-        "addressRegion": "Seine-Saint-Denis",
-        "addressCountry": "FR"
-      },
-      "telephone": "+33615271022",
-      "url": "https://majohyoga.fr/yoga-le-raincy",
-      "areaServed": ["Le Raincy", "Gagny", "Villemomble", "Montfermeil"],
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 48.8721,
-        "longitude": 2.5610
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Saturday"],
-          "opens": "09:45",
-          "closes": "12:00"
-        }
-      ],
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "Hatha Yoga doux",
-          "description": "Séance douce favorisant mobilité, détente et posture.",
-          "availability": "https://schema.org/InStock",
-          "price": "À partir de 20€",
-          "priceCurrency": "EUR"
-        },
-        {
-          "@type": "Offer",
-          "name": "Yoga sur chaise",
-          "description": "Pratique douce et accessible, adaptée à tous, incluant seniors et personnes à mobilité réduite.",
-          "availability": "https://schema.org/InStock",
-          "price": "À partir de 25€",
-          "priceCurrency": "EUR"
-        }
-      ]
+      "@type": "City",
+      "name": "Gagny"
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Où ont lieu les cours de yoga au Raincy ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Les cours ont lieu au Centre Kiné Sport Le Raincy, 7 Av. de la Résistance, 93340 Le Raincy, à 5 minutes à pied de la gare RER Le Raincy – Villemomble – Montfermeil."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Quels sont les horaires des cours ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tous les samedis, y compris pendant les vacances scolaires : 9h45 – 10h45 : Hatha Yoga doux, 11h – 12h : Yoga sur chaise."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Le yoga sur chaise au Raincy est-il adapté aux seniors ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oui, le yoga sur chaise est particulièrement adapté aux seniors et aux personnes souhaitant une pratique douce et sécurisée."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Faut-il réserver à l'avance ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oui, l'inscription est obligatoire pour garantir votre place et permettre un accompagnement personnalisé en petit groupe."
-          }
-        }
-      ]
+      "@type": "City",
+      "name": "Le Raincy"
+    },
+    {
+      "@type": "City",
+      "name": "Villemomble"
+    },
+    {
+      "@type": "City",
+      "name": "Montfermeil"
     }
+  ],
+  "priceRange": "€€",
+  "sameAs": [
+    "https://instagram.com/majoh_yoga"
   ]
 }
 </script>
 
+    <!-- Person (Uniforme) + (Mettre sur toutes les pages) -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://majohyoga.fr/#person",
+  "name": "Johanne Majoh",
+  "jobTitle": "Professeure de yoga",
+  "image": "https://majohyoga.fr/assets/images/professeure_yoga.png",
+  "url": "https://majohyoga.fr",
+  "telephone": "+33615271022",
+  "email": "majoh.yoga@gmail.com",
+  "sameAs": [
+    "https://instagram.com/majoh_yoga"
+  ],
+  "knowsAbout": [
+    "Hatha Yoga",
+    "Yoga doux",
+    "Yoga sur chaise",
+    "Bien-être",
+    "Mobilité douce",
+    "Relaxation"
+  ],
+  "worksFor": {
+    "@type": "LocalBusiness",
+    "@id": "https://majohyoga.fr/#localbusiness"
+  }
+}
+</script>
+
+    <!-- Schema Event (cours dans des lieux ne nous appartenant pas) -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Cours de Hatha Yoga doux & Yoga sur chaise",
+  "description": "Cours collectif de yoga chaque samedi matin au Centre Kiné Sport Le Raincy.",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "organizer": {
+    "@type": "LocalBusiness",
+    "@id": "https://majohyoga.fr/#localbusiness"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Centre Kiné Sport Le Raincy",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "7 Av. de la Résistance",
+      "postalCode": "93340",
+      "addressLocality": "Le Raincy",
+      "addressCountry": "FR"
+    }
+  },
+  "eventSchedule": {
+    "@type": "Schedule",
+    "byDay": "https://schema.org/Saturday",
+    "startTime": "09:45",
+    "endTime": "12:00"
+  }
+}
+</script>
+
+    <!-- FAQ -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Où ont lieu les cours de yoga au Raincy ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les cours ont lieu au Centre Kiné Sport Le Raincy, 7 Av. de la Résistance, 93340 Le Raincy, à 5 minutes à pied de la gare RER Le Raincy – Villemomble – Montfermeil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quels sont les horaires ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tous les samedis, y compris pendant les vacances scolaires : 9h45 – 10h45 : Yoga Hatha doux, 11h – 12h : Yoga sur chaise."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il réserver ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, l'inscription est obligatoire. Les cours se déroulent en petit groupe (6 à 8 personnes) pour garantir un accompagnement personnalisé."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment réserver ma séance ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vous pouvez réserver directement en ligne via le site internet, par mail ou par téléphone."
+      }
+    }
+  ]
+}
+</script>
 </head>
 
 <body>
 
     <header>
         <div class="nav">
-            <a class="logo" href="./index.html">
-                <img src="./assets/images/majoh_logo.png" alt="Logo Majoh" width="35" height="80">
+            <a class="logo" href="../index.html">
+                <img src="../assets/images/majoh_logo.png" alt="Logo Majoh" width="35" height="80">
                 Majoh
             </a>
             <a target="_blank" href="https://app.zenamu.com/majoh" class="btn">Réserver</a>
@@ -136,7 +215,7 @@
                 <a href="#contact" class="btn secondary">Réserver votre séance</a>
             </div>
             <picture>
-                <img src="./assets/images/professeure_yoga.png" alt="Cours de yoga au Raincy avec Majoh" width="219"
+                <img src="../assets/images/professeure_yoga.png" alt="Cours de yoga au Raincy avec Majoh" width="219"
                     height="320" loading="eager">
             </picture>
         </section>
@@ -193,8 +272,8 @@
             <div class="courses">
                 <div class="course">
                     <picture>
-                        <source srcset="./assets/images/hatha_yoga_doux.avif" type="image/avif">
-                        <img loading="lazy" src="./assets/images/hatha_yoga_doux.png"
+                        <source srcset="../assets/images/hatha_yoga_doux.avif" type="image/avif">
+                        <img loading="lazy" src="../assets/images/hatha_yoga_doux.png"
                             alt="Cours de yoga hatha doux en petit groupe" width="200" height="200">
                     </picture>
                     <h3>9h45 – 10h45</h3>
@@ -204,8 +283,8 @@
 
                 <div class="course">
                     <picture>
-                        <source srcset="./assets/images/yoga_chaise.avif" type="image/avif">
-                        <img loading="lazy" src="./assets/images/yoga_chaise.png"
+                        <source srcset="../assets/images/yoga_chaise.avif" type="image/avif">
+                        <img loading="lazy" src="../assets/images/yoga_chaise.png"
                             alt="Cours de yoga sur chaise pour seniors" width="200" height="200" />
                     </picture>
                     <h3>11h – 12h</h3>
@@ -221,7 +300,11 @@
             <div class="redirection-courses-type">
                 <p>
                     Si vous préferez les cours en ligne, retrouvez toutes les informations sur
-                    <a href="./yoga-en-ligne.html">notre page Yoga en ligne</a>.
+                    <a href="../service/yoga-en-ligne.html">notre page Yoga en ligne</a>.
+                </p>
+                <p>
+                    Pour nos cours à Gagny, retrouvez toutes les informations sur
+                    <a href="../location/yoga-gagny.html">notre page Yoga à Gagny</a>.
                 </p>
             </div>
         </section>
@@ -330,8 +413,8 @@
             </p>
 
             <p class="footer-legal">
-                <a href="./mentions-legales.html">Mentions légales</a> |
-                <a href="./politique-confidentialite.html">Politique de confidentialité</a>
+                <a href="../policies/mentions-legales.html">Mentions légales</a> |
+                <a href="../policies/politique-confidentialite.html">Politique de confidentialité</a>
 
             </p>
             <p class="copyright">
@@ -341,7 +424,7 @@
         </div>
     </footer>
 
-    <script defer async src="./script.js"></script>
+    <script defer async src="../script.js"></script>
 
 </body>
 

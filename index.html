@@ -4,10 +4,29 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow">
+
     <title>Cours de yoga doux & sur chaise — En ligne et en présentiel | Majoh</title>
     <meta name="description"
         content="Cours de yoga doux et yoga sur chaise en ligne, en présentiel et à domicile. Séances en petit groupe ou en cours particulier. Accessible à tous les âges. Réservez votre séance avec Majoh." />
-    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cours de Yoga à Gagny – Majoh">
+    <meta property="og:description"
+        content="Cours de Hatha doux, yoga sur chaise, cours à domicile et en entreprise à Gagny et alentours.">
+    <meta property="og:url" content="https://majohyoga.fr">
+    <meta property="og:image" content="https://majohyoga.fr/assets/images/majoh_logo_rs.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cours de Yoga à Gagny – Majoh">
+    <meta name="twitter:description"
+        content="Yoga doux, yoga sur chaise, cours particuliers et entreprise à Gagny et alentours.">
+    <meta name="twitter:image" content="https://majohyoga.fr/assets/images/majoh_logo_rs.png">
+
     <link rel="canonical" href="https://majohyoga.fr/" />
     <link rel="stylesheet" href="style.css">
     <!-- Preload des fonts -->
@@ -15,33 +34,29 @@
     <link rel="preload" href="./assets/fonts/inter-v20-latin-500.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./assets/fonts/inter-v20-latin-600.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./assets/fonts/inter-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
-    <!-- <link rel="shortcut icon" href="./assets/images/yoga.ico" type="image/x-icon"> -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon_32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon_16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon_applewatch.png">
 
+    <!-- Local Business (Uniforme) + (Mettre sur toutes les pages) -->
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Majoh",
-  "url": "https://majohyoga.fr/",
+  "@type": "LocalBusiness",
+  "@id": "https://majohyoga.fr/#localbusiness",
+  "name": "Majoh yoga",
   "image": "https://majohyoga.fr/assets/images/professeure_yoga.png",
-  "jobTitle": "Professeure de yoga",
-  "description": "Professeure de yoga proposant des cours de yoga doux, yoga sur chaise et accompagnement bien-être en ligne et en présentiel en Seine-Saint-Denis.",
+  "url": "https://majohyoga.fr",
   "telephone": "+33615271022",
   "email": "majoh.yoga@gmail.com",
-  "knowsAbout": [
-    "Yoga doux",
-    "Yoga sur chaise",
-    "Hatha yoga",
-    "Bien-être",
-    "Relaxation",
-    "Respiration",
-    "Mobilité douce"
-  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gagny",
+    "postalCode": "93220",
+    "addressCountry": "FR"
+  },
   "areaServed": [
-    {
-      "@type": "AdministrativeArea",
-      "name": "Seine-Saint-Denis"
-    },
     {
       "@type": "City",
       "name": "Gagny"
@@ -49,52 +64,52 @@
     {
       "@type": "City",
       "name": "Le Raincy"
+    },
+    {
+      "@type": "City",
+      "name": "Villemomble"
+    },
+    {
+      "@type": "City",
+      "name": "Montfermeil"
     }
   ],
-  "offers": {
-    "@type": "OfferCatalog",
-    "name": "Cours de yoga",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Cours de yoga doux",
-          "description": "Séances adaptées à tous les niveaux favorisant détente et mobilité."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Yoga sur chaise",
-          "description": "Yoga accessible aux seniors et personnes à mobilité réduite."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Cours de yoga à domicile",
-          "description": "Séances personnalisées à domicile dans le secteur de Gagny et alentours."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Cours de yoga en ligne",
-          "description": "Séances de yoga à distance en visioconférence."
-        }
-      }
-    ]
-  },
+  "priceRange": "€€",
   "sameAs": [
-    "https://www.instagram.com/majoh.yoga/"
+    "https://instagram.com/majoh_yoga"
   ]
 }
 </script>
 
+    <!-- Person (Uniforme) + (Mettre sur toutes les pages) -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://majohyoga.fr/#person",
+  "name": "Johanne Majoh",
+  "jobTitle": "Professeure de yoga",
+  "image": "https://majohyoga.fr/assets/images/professeure_yoga.png",
+  "url": "https://majohyoga.fr",
+  "telephone": "+33615271022",
+  "email": "majoh.yoga@gmail.com",
+  "sameAs": [
+    "https://instagram.com/majoh_yoga"
+  ],
+  "knowsAbout": [
+    "Hatha Yoga",
+    "Yoga doux",
+    "Yoga sur chaise",
+    "Bien-être",
+    "Mobilité douce",
+    "Relaxation"
+  ],
+  "worksFor": {
+    "@type": "LocalBusiness",
+    "@id": "https://majohyoga.fr/#localbusiness"
+  }
+}
+</script>
 </head>
 
 <body>
@@ -162,12 +177,16 @@
             </div>
             <div class="redirection-courses-type">
                 <p>
+                    Pour nos cours à Gagny, retrouvez toutes les informations sur
+                    <a href="./location/yoga-gagny.html">notre page Yoga à Gagny</a>.
+                </p>
+                <p>
                     Pour nos cours en présentiel sur le Raincy, retrouvez toutes les informations sur
-                    <a href="./yoga-le-raincy.html">notre page Yoga Le Raincy</a>.
+                    <a href="./location/yoga-le-raincy.html">notre page Yoga Le Raincy</a>.
                 </p>
                 <p>
                     Pour nos cours en ligne, retrouvez toutes les informations sur
-                    <a href="./yoga-en-ligne.html">notre page Yoga en ligne</a>.
+                    <a href="./service/yoga-en-ligne.html">notre page Yoga en ligne</a>.
                 </p>
             </div>
         </section>
@@ -222,8 +241,8 @@
             </p>
 
             <p class="footer-legal">
-                <a href="./mentions-legales.html">Mentions légales</a> |
-                <a href="./politique-confidentialite.html">Politique de confidentialité</a>
+                <a href="./policies/mentions-legales.html">Mentions légales</a> |
+                <a href="./policies/politique-confidentialite.html">Politique de confidentialité</a>
 
             </p>
             <p class="copyright">
