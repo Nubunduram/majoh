@@ -1,5 +1,7 @@
-/yoga-gagny      /location/yoga-gagny      301
-/yoga-le-raincy  /location/yoga-le-raincy  301
-/yoga-en-ligne   /service/yoga-en-ligne    301
-/mentions-legales /policies/mentions-legales 301
-/politique-confidentialite /policies/politique-confidentialite 301
+/yoga-gagny                    /location/yoga-gagny                301
+/yoga-en-ligne                 /service/yoga-en-ligne              301
+/mentions-legales              /policies/mentions-legales          301
+/politique-confidentialite     /policies/politique-confidentialite 301
+
+/location/yoga-le-raincy       /location/yoga-gagny                301
+/yoga-le-raincy                /location/yoga-gagny                301
