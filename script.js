@@ -1,74 +1,151 @@
-let calendarLoaded = false;
+(() => {
+    'use strict';
 
-const calendarSection = document.getElementById('zenamu-calendar');
+    const CALENDAR_SRC = 'https://zenamu.com/calendar/list.js';
+    const RENDER_TIMEOUT_MS = 5000;
 
-/**
- * Charge le script Zenamu une seule fois.
- * Retourne true si le script vient d'être chargé (et qu'il faut donc attendre),
- * false s'il était déjà chargé.
- */
-function loadCalendarScript() {
-    if (calendarLoaded) return false;
+    const calendarSection = document.getElementById('zenamu-calendar');
+    const contactSection = document.getElementById('contact');
 
-    const script = document.createElement('script');
-    script.src = "https://zenamu.com/calendar/list.js";
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
 
-    calendarLoaded = true;
-    return true;
-}
+    function scrollToElement(element) {
+        if (element) element.scrollIntoView({ behavior: scrollBehavior });
+    }
 
-/**
- * Scroll vers une cible en attendant que le calendrier soit chargé si besoin.
- */
-function scrollToTarget(target, justLoaded) {
-    if (!target) return;
-    const delay = justLoaded ? 750 : 0;
-    setTimeout(() => {
-        target.scrollIntoView({ behavior: 'smooth' });
-    }, delay);
-}
+    /* ============================================
+       CALENDRIER ZENAMU
+       ============================================ */
 
-// Bouton "Voir les disponibilités" (CTA en bas de page) → scroll vers le calendrier
-const loadBtn = document.getElementById('load-calendar');
-if (loadBtn && calendarSection) {
-    loadBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const justLoaded = loadCalendarScript();
-        scrollToTarget(calendarSection, justLoaded);
-    });
-}
+    let calendarPromise = null;
 
-// Tous les boutons "Réserver" qui pointent vers #contact (header, hero, etc.)
-// → préchargent le calendrier en arrière-plan et scrollent vers la CTA
-const reserveBtns = document.querySelectorAll('a.btn[href="#contact"]');
-const contactSection = document.getElementById('contact');
-if (contactSection) {
-    reserveBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
+    function showCalendarError() {
+        if (!calendarSection) return;
+        const message = document.createElement('p');
+        message.className = 'calendar-error';
+        message.setAttribute('role', 'alert');
+        message.textContent =
+            "Le calendrier n'a pas pu se charger. Réessayez dans un instant " +
+            "ou contactez-nous par mail ou par téléphone (coordonnées en bas de page).";
+        calendarSection.appendChild(message);
+    }
+
+    /**
+     * Charge le script Zenamu une seule fois et retourne une Promise
+     * qui se résout quand le calendrier est affiché (ou après un délai maximum).
+     * La Promise ne rejette jamais : en cas d'erreur, un message est affiché
+     * et un nouveau clic relancera le chargement.
+     */
+    function loadCalendar() {
+        if (!calendarSection) return Promise.resolve();
+        if (calendarPromise) return calendarPromise;
+
+        const previousError = calendarSection.querySelector('.calendar-error');
+        if (previousError) previousError.remove();
+
+        calendarPromise = new Promise((resolve) => {
+            let timer;
+
+            const observer = new MutationObserver(() => {
+                if (calendarSection.childElementCount > 0) done();
+            });
+
+            function done() {
+                clearTimeout(timer);
+                observer.disconnect();
+                resolve();
+            }
+
+            function fail() {
+                calendarPromise = null;
+                showCalendarError();
+                done();
+            }
+
+            observer.observe(calendarSection, { childList: true, subtree: true });
+            timer = setTimeout(done, RENDER_TIMEOUT_MS);
+
+            const script = document.createElement('script');
+            script.src = CALENDAR_SRC;
+            script.async = true;
+            script.onerror = fail;
+            document.body.appendChild(script);
+        });
+
+        return calendarPromise;
+    }
+
+    // Bouton "Voir les disponibilités" (CTA) → charge puis scroll vers le calendrier
+    const loadBtn = document.getElementById('load-calendar');
+    if (loadBtn && calendarSection) {
+        loadBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            loadCalendarScript(); // pré-chargement en arrière-plan
-            contactSection.scrollIntoView({ behavior: 'smooth' });
+            loadCalendar().then(() => scrollToElement(calendarSection));
+        });
+    }
+
+    // Boutons "Réserver" (header, hero…) → préchargent le calendrier
+    // en arrière-plan et scrollent vers la CTA
+    if (contactSection) {
+        document.querySelectorAll('a.btn[href="#contact"]').forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                loadCalendar();
+                scrollToElement(contactSection);
+            });
+        });
+    }
+
+    /* ============================================
+       FAQ
+       ============================================ */
+
+    document.querySelectorAll('.faq-item').forEach((item) => {
+        const button = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        if (!button || !answer) return;
+
+        // Relie la réponse à sa question pour les lecteurs d'écran
+        if (!button.id && answer.id) button.id = `${answer.id}-button`;
+        if (button.id) answer.setAttribute('aria-labelledby', button.id);
+
+        // Une réponse fermée ne doit pas être atteignable au clavier
+        // ni lue par les lecteurs d'écran (liens mail/tél inclus)
+        const setOpen = (open) => {
+            item.classList.toggle('active', open);
+            button.setAttribute('aria-expanded', String(open));
+            answer.inert = !open;
+        };
+
+        setOpen(item.classList.contains('active'));
+
+        button.addEventListener('click', () => {
+            setOpen(!item.classList.contains('active'));
         });
     });
-}
 
-// FAQ : toggle + sync aria-expanded
-document.querySelectorAll(".faq-question").forEach(button => {
-    button.addEventListener("click", () => {
-        const faqItem = button.parentElement;
-        const isActive = faqItem.classList.toggle("active");
-        button.setAttribute("aria-expanded", isActive ? "true" : "false");
-    });
-});
+    /* ============================================
+       NAV : lien actif
+       ============================================ */
 
-// Nav : marquer le lien actif selon la page courante
-document.querySelectorAll('.nav-links a').forEach(link => {
-    if (link.href === window.location.href ||
-        window.location.pathname.endsWith(new URL(link.href).pathname)) {
-        link.classList.add('active');
-        link.setAttribute('aria-current', 'page');
+    // Ignore "index.html", ".html" et le "/" final pour que /location/yoga-gagny,
+    // /location/yoga-gagny.html et /location/yoga-gagny/ soient équivalents
+    function normalizePath(path) {
+        let normalized = path.toLowerCase().replace(/index\.html$/, '').replace(/\.html$/, '');
+        if (normalized.length > 1) normalized = normalized.replace(/\/+$/, '');
+        return normalized || '/';
     }
-});
+
+    const currentPath = normalizePath(window.location.pathname);
+
+    document.querySelectorAll('.nav-links a').forEach((link) => {
+        const isCurrent = normalizePath(new URL(link.href).pathname) === currentPath;
+        link.classList.toggle('active', isCurrent);
+        if (isCurrent) {
+            link.setAttribute('aria-current', 'page');
+        } else {
+            link.removeAttribute('aria-current');
+        }
+    });
+})();

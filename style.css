@@ -42,7 +42,8 @@
   --bg: #faf9f7;
   --primary: #3f5d4a;
   --primary-light: #5a7e69;
-  --accent: #c08552;
+  /* Assombri pour que le texte blanc dessus atteigne un contraste AA (≈5:1) */
+  --accent: #9c5f2f;
   --text: #1f2933;
   --text-muted: #5a6470;
   --white: #ffffff;
@@ -68,23 +69,58 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Défilement fluide uniquement si le visiteur ne demande pas de réduire les animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: inherit;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
 }
 
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
 a {
   text-decoration: none;
+}
+
+/* Focus clavier visible */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Sur fond vert, l'anneau passe en clair */
+.cta :focus-visible,
+.section-courses :focus-visible {
+  outline-color: var(--bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* ============================================
@@ -182,7 +218,9 @@ header {
   color: var(--primary);
 }
 
-.nav-links a.active {
+/* Page courante (posé par le HTML et par script.js) */
+.nav-links a.active,
+.nav-links a[aria-current="page"] {
   color: var(--primary);
   font-weight: 600;
   background: rgba(63, 93, 74, 0.1);
@@ -217,11 +255,15 @@ header {
     gap: 0;
   }
 
+  /* Les libellés peuvent passer à la ligne : évite le débordement
+     horizontal sur les petits écrans (4 liens dont "Yoga Noisy-le-Grand") */
   .nav-links a {
     flex: 1;
     text-align: center;
     font-size: 0.875rem;
-    padding: 0.4rem 0.5rem;
+    line-height: 1.3;
+    padding: 0.7rem 0.4rem;
+    white-space: normal;
   }
 }
 
@@ -247,17 +289,9 @@ header {
   color: var(--primary);
 }
 
-.btn.secondary {
-  background: var(--primary);
-  color: var(--bg);
-  border: solid 1px var(--primary);
-}
+/* .btn.secondary : même rendu que .btn (bouton plein sur fond clair) */
 
-.btn.secondary:hover {
-  background: var(--bg);
-  color: var(--primary);
-}
-
+/* Bouton clair, pour les fonds verts (CTA) */
 .btn.third {
   border: solid 1px var(--bg);
   background-color: var(--bg);
@@ -269,6 +303,7 @@ header {
   color: var(--bg);
 }
 
+/* Bouton "Retour à l'accueil" fixé en haut à gauche (pages légales) */
 .btn.home {
   position: fixed;
   top: 1rem;
@@ -323,7 +358,7 @@ header {
 
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
   gap: 2rem;
   width: 100%;
 }
@@ -382,11 +417,13 @@ header {
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
-/* Grille spécifique pour les tarifs : carte mise en avant en bandeau + 4 cartes en dessous */
+/* Grille des tarifs : s'adapte au nombre de cartes (2, 3 ou 4 par ligne).
+   Une carte .featured occupe toute la largeur (page Gagny). */
 .features.pricing {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
 }
 
 .features.pricing .featured {
@@ -399,9 +436,14 @@ header {
 
 .courses {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: 2rem;
   width: 100%;
+}
+
+/* Bloc placé après une grille de tarifs (cours particuliers en ligne) */
+.courses-spaced {
+  margin-top: 2rem;
 }
 
 .course {
@@ -413,11 +455,6 @@ header {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-
-.course > picture > img {
-  width: 200px;
-  margin: 0 auto 1.2rem auto;
 }
 
 .course h3 {
@@ -462,7 +499,8 @@ header {
   margin: 0.5rem 0;
 }
 
-.price small {
+.price small,
+.price-detail {
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-muted);
@@ -535,7 +573,7 @@ header {
   margin-right: 0.25rem;
 }
 
-/* Bouton inline "Voir tous les détails" sous le studio sur la home */
+/* Lien "Voir le planning / l'adresse →" (home et cartes de cours) */
 .studio-link-row {
   margin-top: 1rem;
 }
@@ -601,14 +639,16 @@ header {
   font-weight: 600;
 }
 
-.course .planning-time {
+.course .planning-time,
+.feature .planning-time {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--primary);
   margin: 0.25rem 0 0.75rem 0;
 }
 
-.course .planning-name {
+.course .planning-name,
+.feature .planning-name {
   font-weight: 600;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
@@ -660,6 +700,18 @@ footer .copyright {
   display: none;
 }
 
+/* Message affiché par script.js si le calendrier ne se charge pas */
+.calendar-error {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  background: var(--white);
+  color: var(--text);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
 /* ============================================
    FAQ
    ============================================ */
@@ -698,6 +750,12 @@ footer .copyright {
 
 .faq-question:hover {
   background: rgba(63, 93, 74, 0.06);
+}
+
+/* Anneau à l'intérieur du bouton : le conteneur coupe tout ce qui dépasse */
+.faq-question:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: -3px;
 }
 
 .faq-icon {
@@ -765,6 +823,11 @@ footer .copyright {
    ============================================ */
 
 @media (max-width: 900px) {
+  /* Le bouton fixe "Retour à l'accueil" ne doit pas recouvrir le titre */
+  .legal {
+    padding-top: 3.5rem;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
@@ -789,7 +852,9 @@ footer .copyright {
     width: 100%;
   }
 
-  .features.pricing {
+  /* Grille de 4 tarifs + carte découverte (Gagny) : 2 colonnes
+     plutôt qu'une carte orpheline sur une troisième ligne */
+  .features.pricing:has(> .feature:nth-child(5)) {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -817,13 +882,7 @@ footer .copyright {
     padding: 1.5rem;
   }
 
-  .features.pricing {
+  .features.pricing:has(> .feature:nth-child(5)) {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 390px) {
-  .hero h1 span {
-    word-break: break-all;
   }
 }

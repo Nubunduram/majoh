@@ -1,7 +1,19 @@
+# Raccourcis
 /yoga-gagny                    /location/yoga-gagny                301
+/yoga-noisy-le-grand           /location/yoga-noisy-le-grand       301
 /yoga-en-ligne                 /service/yoga-en-ligne              301
 /mentions-legales              /policies/mentions-legales          301
 /politique-confidentialite     /policies/politique-confidentialite 301
 
+# Le Raincy (zone d'intervention) -> Gagny
 /location/yoga-le-raincy       /location/yoga-gagny                301
 /yoga-le-raincy                /location/yoga-gagny                301
+
+# Anciennes URLs en .html -> URLs canoniques (le "!" force la redirection
+# même si le fichier existe)
+/index.html                                 /                                    301!
+/location/yoga-gagny.html                   /location/yoga-gagny                 301!
+/location/yoga-noisy-le-grand.html          /location/yoga-noisy-le-grand        301!
+/service/yoga-en-ligne.html                 /service/yoga-en-ligne               301!
+/policies/mentions-legales.html             /policies/mentions-legales           301!
+/policies/politique-confidentialite.html    /policies/politique-confidentialite  301!
