@@ -606,7 +606,7 @@ header {
 }
 
 .about-content h3 {
-  color: var(--primary);
+  color: var(--bg);
   font-size: 1.2rem;
   margin-top: 0.5rem;
 }
